@@ -2,28 +2,18 @@ package htwberlin.webtec;
 
 import jakarta.persistence.*;
 import org.springframework.web.bind.annotation.*;
-@Entity(name = "exercises")
+@Entity
 public class ExerciseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     private String name;
     private String muscleGroup;
     private double weight;
     private String category;
 
-
-    public ExerciseEntity(String name, String muscleGroup, double weight, String category) {
-        this.name = name;
-        this.muscleGroup = muscleGroup;
-        this.weight = weight;
-        this.category = category;
-    }
-
-    protected ExerciseEntity() {}
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -67,5 +57,3 @@ public class ExerciseEntity {
         this.category = category;
     }
 }
-
-
