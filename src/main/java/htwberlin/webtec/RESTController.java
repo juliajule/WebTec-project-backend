@@ -12,6 +12,8 @@ public class RESTController {
     @Autowired
     private EntityRepository EntityRepository;
 
+
+
     @GetMapping("/api/exercises")
     public List<ExerciseEntity> getAllExercises() {
         return EntityRepository.findAll();
