@@ -12,14 +12,12 @@ public class RESTController {
     @Autowired
     private EntityRepository EntityRepository;
 
-
-
-    @GetMapping("/api/exercises")
+    @GetMapping
     public List<ExerciseEntity> getAllExercises() {
         return EntityRepository.findAll();
     }
 
-    @PostMapping("/api/exercises")
+    @PostMapping
     public ExerciseEntity createExercise(@RequestBody ExerciseEntity exercise) {
         return EntityRepository.save(exercise);
     }
