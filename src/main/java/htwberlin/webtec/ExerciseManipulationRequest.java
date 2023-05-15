@@ -1,22 +1,18 @@
 package htwberlin.webtec;
 
-public class Exercise {
-    private long id;
+public class ExerciseManipulationRequest {
+
+
     private String name;
     private String muscleGroup;
     private double weight;
     private String category;
 
-    public Exercise(long id, String name, String muscleGroup, double weight, String category) {
-        this.id = id;
+    public ExerciseManipulationRequest(String name, String muscleGroup, double weight, String category) {
         this.name = name;
         this.muscleGroup = muscleGroup;
         this.weight = weight;
         this.category = category;
-    }
-
-    public long getId() {
-        return id;
     }
 
     public String getName() {

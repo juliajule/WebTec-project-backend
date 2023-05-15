@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 public class ExerciseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     private String name;
     private String muscleGroup;
@@ -23,7 +23,7 @@ public class ExerciseEntity {
 
     protected ExerciseEntity() {}
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
