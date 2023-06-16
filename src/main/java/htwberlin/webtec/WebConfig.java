@@ -12,7 +12,6 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedMethods("*")
-                .allowedOrigins("http://localhost:3000/",
-                        "https://profwider.github.io/webtech-frontend/");
+                .allowedOrigins("http://localhost:3000/");
     }
 }
