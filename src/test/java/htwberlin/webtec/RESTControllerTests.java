@@ -13,10 +13,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-
 
 import java.util.List;
 import java.util.Optional;
@@ -95,13 +92,14 @@ public class RESTControllerTests {
                 .andExpect(jsonPath("$.weight").value(80.0));
     }
     @Test
-    public void deleteExerciseTest1() throws Exception {
+    @DisplayName("should delete a exercise with the given id")
+    public void deleteExerciseTest() throws Exception {
         long l = 1L;
 
         doReturn(true).when(entityRepository).existsById(l);
 
         mockMvc.perform(delete("/api/exercises/{id}", l))
-                .andExpect(MockMvcResultMatchers.status().isOk());
+                .andExpect(status().isOk());
 
         verify(entityRepository).deleteById(l);
     }
