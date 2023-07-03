@@ -1,5 +1,6 @@
 package htwberlin.webtec;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,7 +35,7 @@ public class RESTController {
     @DeleteMapping("/api/exercises/{id}")
     public void deleteExercise(@PathVariable long id){
         if (!EntityRepository.existsById(id))
-            throw new RuntimeException();
+            throw new EntityNotFoundException("Exercise with ID " + id + " not found.");
         EntityRepository.deleteById(id);
     }
 }

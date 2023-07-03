@@ -1,7 +1,7 @@
 package htwberlin.webtec;
 
 import jakarta.persistence.*;
-import org.springframework.web.bind.annotation.*;
+
 @Entity
 public class ExerciseEntity {
     @Id
